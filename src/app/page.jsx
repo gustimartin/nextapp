@@ -1,14 +1,20 @@
-async function fetchUsers() {
-  const res = await fetch("https://reqres.in/api/users");
-  const data = await res.json();
-  return data.data;
+import TaskCard from "@/components/TaskCard";
+import { prisma } from "./libs/prisma";
+
+async function fetchTasks() {
+  return await prisma.task.findMany();
 }
 
 export default async function Home() {
-  const users = await fetchUsers();
+  const tasks = await fetchTasks();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello world</h1>
-    </main>
+    <section className=" container mx-auto">
+      {" "}
+      <main className="grid grid-cols-2 gap-4  p-4 md:grid-cols-4  ">
+        {tasks.map((task) => (
+          <TaskCard key={task.id} task={task} />
+        ))}
+      </main>
+    </section>
   );
 }
