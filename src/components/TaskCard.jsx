@@ -5,7 +5,7 @@ const TaskCard = ({ task }) => {
   const router = useRouter();
   return (
     <div
-      className=" border-2 border-red-700 h-full rounded-md hover cursor-pointer hover:bg-zinc-300"
+      className=" border-2 border-[#808000] h-full rounded-md hover cursor-pointer hover:bg-[#808000] shadow-sm shadow-[#808000] hover:text-amber-50"
       onClick={() => {
         router.push(`/task/edit/${task.id}`);
       }}
