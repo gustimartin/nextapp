@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const AboutPage = () => {
   return (
     <div>
@@ -11,6 +11,12 @@ const AboutPage = () => {
           connection to SQL database. In this project you can create, delete or
           modify tasks that you put up for your self.
         </p>
+        <Link href="https://github.com/gustimartin/nextapp">
+          <button className=" m-2 px-4 rounded-sm shadow-sm shadow-[#808000] py-2 text-amber-50 bg-[#808000]">
+            {" "}
+            Code
+          </button>
+        </Link>
       </div>
     </div>
   );
